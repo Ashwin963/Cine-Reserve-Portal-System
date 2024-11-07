@@ -1,5 +1,9 @@
 Install the xampp app in microsoft store.
 
+And I add new feature which is not in recent e-commerce website or application.
+
+The new feature is customer can view the theatre setup by virtually and it give more customer satisfaction.
+
 In xampp, start the Apache server and Mysql server in that.
 
 Download the file and copy-paste in your /Local Disk C/xampp/htdocs.
