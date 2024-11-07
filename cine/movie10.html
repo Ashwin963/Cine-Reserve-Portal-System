@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="rrr.css" >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script src="rrr.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+  <title>Movie Reserve</title>
+</head>
+
+<body>
+
+  <div class="moviebox" style="background: url('images/mov.jpg');background-size: cover;color: white;">
+    <div class="imagebox"><img src="images/ind.jpg" id="poster" alt=""></div>
+    <div class="moviedetails">
+        <span class="title">Indian 2</span>
+        <span>Cast : Kamal Hassan,Siddarth,Priya Bhavani Shankar</span>
+        <span>Crew : Music by Anirudh Ravichandran & Directed by Shankar</span>
+        <span>Duration : 3h </span>
+        <span>Synopsis : Senapathy, an ex-freedom fighter turned vigilante who fights against corruption. Senapathy returns to the country to aid a young man who has been exposing corrupt politicians in the country through videos on the internet.</span>
+    </div>
+  </div>
+<div class="bk">
+    <div class="">
+        <div class="moviebox d-flex flex-column">
+            <span class="selecttext ash">Select your screen and show timings from below.</span>
+            <form id="bookingForm">
+                <div class="con">
+                    <div class="d-flex flex-row justify-content-center">
+                        <input type="text" id="movieName" name="movieName"  style="width: 100%;
+                        border: solid 1px orangered;
+                        border-radius: 4px; text-align: center;background-color: transparent;color: white;" value="Indian 2" readonly /><br><br>
+                    </div>
+                    <div class="m-3 text-center">
+                        <input type="date" id="movieDate" name="movieDate" required class="m-2" placeholder="Select your Date">
+                        <input type="number" id="quantity" name="quantity" min="1" placeholder="No.of.seats" required>
+                        <select id="movieTime" name="movieTime" required class="m-2">
+                            <option value="" disabled selected>Select a Time</option>
+                            <option>7:30 am</option>
+                            <option>9:45 am</option>
+                            <option>1:00 pm</option>
+                            <option>2:45 pm</option>
+                            <option>5.30 pm</option>
+                            <option>7.30 pm</option>
+                            <option>10.30 pm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select id="movieTheatre" name="movieTheatre" required>
+                            <option value="" disabled selected>Select a Theatre</option>
+                            <option>Sri Sakthi Cinemas 4K,Chennai</option>
+                            <option>Sathyam Cinemas,Chennai</option>
+                            <option>PVR Cinemas,Chennai</option>
+                            <option>PVR Cinemas,Coimbatore</option>
+                            <option>KG Cinemas 4k,Coimbatore</option>
+                            <option>Sri Sakthi Cinemas 4K,Tirupur</option>
+                            <option>SAP Theatre Multiplex,Tirupur</option>
+                            <option>Sri Sakthi Cinemas 4K,Erode</option>
+                            <option>Aanoor Theatre 4k,Erode</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <div class="text-center">
+                        <a class="btn btn-warning" onclick="vrExp()">VR Experience</a>
+                        <div class="mt-3">
+                            <p>
+                                <a class="btn btn-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    Select Your Seats
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body bg-dark">
+                        <div class="screen text-center">Screen</div>
+                        <div id="seatMap" class="text-center" style="color: black;">
+                            <!-- Seats will be dynamically generated here -->
+                        </div>
+                        <div id="totalCost" class="text-center" style="color: black; margin-top: 10px; font-weight: bold;">Total: Rs. 0</div>
+                        <button type="button" onclick="bookSeats()" class="bg-dark bttn">Book Now</button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let totalCost = 0;
+    function updateTotalCost(amount) {
+        totalCost += amount;
+        document.getElementById('totalCost').innerText = `Total: Rs. ${totalCost}`;
+    }
+    function vrExp(){
+        alert('Use Headphones For Better Experience!');
+        window.location.href = 'vr.html';
+    }
+// Set the current date as the value of the movieDate input
+function setCurrentDate() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const day = String(today.getDate()).padStart(2, '0');
+
+        // Format the date as YYYY-MM-DD
+        const formattedDate = `${year}-${month}-${day}`;
+
+        // Set the value and min attribute for the movieDate input
+        const movieDateInput = document.getElementById('movieDate');
+        movieDateInput.value = formattedDate;  // Set the current date
+        movieDateInput.setAttribute('min', formattedDate);  // Set the min attribute to the current date
+    }
+
+    // Call the function to set the current date when the page loads
+    window.onload = setCurrentDate;
+
+    // Existing booking and seat selection code...
+    function bookSeats() {
+        const selectedSeats = Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.innerText);
+        const quantityInput = document.getElementById('quantity');
+        const movieDateSelect = document.getElementById('movieDate');
+        const movieNameSelect = document.getElementById('movieName');
+        const moviePoster = document.getElementById('poster');
+        const movieTimeSelect = document.getElementById('movieTime');
+        const movieTheatreSelect = document.getElementById('movieTheatre');
+        const quantity = parseInt(quantityInput.value); // Get the quantity from input
+        // Check if the number of selected seats matches the quantity
+        if (selectedSeats.length === quantity) {
+            // Send data to PHP script
+            const formData = new FormData();
+            formData.append('movieDate', movieDateSelect.value);
+            formData.append('movieName', movieNameSelect.value);
+            formData.append('movieTime', movieTimeSelect.value);
+            formData.append('movieTheatre', movieTheatreSelect.value);
+            formData.append('quantity', quantityInput.value);
+            formData.append('selectedSeats', JSON.stringify(selectedSeats));
+            
+                // Save booking data to localStorage
+                const bookingData = {
+                    movieName: movieNameSelect.value,
+                    movieDate: movieDateSelect.value,
+                    movieTime: movieTimeSelect.value,
+                    movieTheatre: movieTheatreSelect.value,
+                    selectedSeats: selectedSeats,
+                    posterImage: moviePoster.src,
+                    totalCost: totalCost
+                };
+                localStorage.setItem('bookingData', JSON.stringify(bookingData));
+            fetch('db2.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Seats booked successfully!');
+                    window.location.href = 'pay.html';
+                } else {
+                    alert('Error while booking seats. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later.');
+            });
+        } else if (selectedSeats.length < quantity) {
+            alert(`Please select ${quantity - selectedSeats.length} more seats.`);
+        } else if (selectedSeats.length > quantity){
+            alert(`You've selected too many seats. Please select exactly ${quantity} seats.`);
+        }
+        else{
+            alert("You didn't select any seats");
+        }
+    }
+
+    // Dynamically generate seats
+    const seatMap = document.getElementById('seatMap');
+    const seatsPerRow = 16;
+    const totalRows = 6;
+
+    // Define categories for the rows
+    const seatCategories = [
+        { type: 'Silver', rows: [1, 2], cost: 100 },  // Rows 1-2 as Silver
+        { type: 'Gold', rows: [3, 4, 5], cost: 200 }, // Rows 3-5 as Gold
+        { type: 'Platinum', rows: [6, 7, 8], cost: 300 } // Rows 6-8 as Platinum
+    ];
+
+    seatCategories.forEach(category => {
+        // Create a container for each category
+        const categoryContainer = document.createElement('div');
+        categoryContainer.className = `category-container ${category.type.toLowerCase()}`;
+
+        // Add a label for the category
+        const categoryLabel = document.createElement('div');
+        categoryLabel.className = 'category-label';
+        categoryLabel.innerText = `${category.type}  Rs.${category.cost}`;
+        categoryContainer.appendChild(categoryLabel);
+
+        // Create seats for the rows in this category
+        category.rows.forEach(row => {
+            const rowElement = document.createElement('div');
+            rowElement.className = 'row';
+
+            for (let seat = 1; seat <= seatsPerRow; seat++) {
+                const seatElement = document.createElement('div');
+                seatElement.className = `seat ${category.type.toLowerCase()}`; // Apply category class
+                seatElement.innerText = `${String.fromCharCode(64 + row)}${seat}`;
+                seatElement.dataset.cost = category.cost; // Store seat cost
+                seatElement.onclick = function () {
+                    this.classList.toggle('selected');
+                    
+                    const seatCost = parseInt(this.dataset.cost);
+                    if (this.classList.contains('selected')) {
+                        updateTotalCost(seatCost); // Add cost
+                    } else {
+                        updateTotalCost(-seatCost); // Subtract cost
+                    }
+                };
+                rowElement.appendChild(seatElement);
+            }
+
+            categoryContainer.appendChild(rowElement);
+        });
+
+        // Append the category container to the seat map
+        seatMap.appendChild(categoryContainer);
+    });
+</script>
+</body>
+</html>
