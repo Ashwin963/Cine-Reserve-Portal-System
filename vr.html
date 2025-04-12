@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VR Theatre Setup</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky id="floor" color="#361600"></a-sky>
+      <image src="images/play.png" id="play"></image>
+      <a-image id="video-control" width="0.2" height="0.2" src="#play" position="0 2 -6"></a-image>
+      <!-- Adding a flat screen for video -->
+      <a-plane src="#theatre-video" position="0 7.1 -14" width="28" height="11"></a-plane>
+      
+      <!-- Adding the floor -->
+      <a-plane position="0 20 -17" rotation="-90 0 0" width="50" height="30" color="#333333" id="floor"></a-plane> <!-- Dark grey floor -->
+
+      <!-- Adding the ceiling -->
+      <a-plane position="0 22 -10" rotation="90 0 0" width="50" height="30" color="#444444" id="ceiling"></a-plane> <!-- Lighter grey ceiling -->
+
+      <!-- Adding theater seats -->
+      <a-entity id="seating-area">
+        <a-box id="seats"></a-box>
+      </a-entity>
+      
+      <!-- Image to show before and after video -->
+      <a-image id="video-image" src="images/DB.jpg" position="0 6.5 -12" width="24" height="9.7" visible="true"></a-image>  
+
+      <!-- Left wall speakers -->
+      <a-box position="-24 10 -12" width="3" height="2" depth="1" color="#444"></a-box>
+      <a-box position="-24 10 -3" width="3" height="2" depth="1" color="#444"></a-box> <!-- Gap of 1 -->
+      <a-box position="-24 10 3" width="3" height="2" depth="1" color="#444"></a-box>
+
+      <!-- Right wall speakers -->
+      <a-box position="24 10 -12" width="3" height="2" depth="1" color="#444"></a-box>
+      <a-box position="24 10 -3" width="3" height="2" depth="1" color="#444"></a-box> <!-- Gap of 1 -->
+      <a-box position="24 10 3" width="3" height="2" depth="1" color="#444"></a-box>
+
+      <!-- Lighting to enhance visuals -->
+
+      <a-light id="directional-light" type="directional" intensity="1" position="-1 2 1"></a-light>
+
+      <!-- Adding a camera to view the scene -->
+      <a-entity position="0 1.8 0" color="#361600">
+        <a-entity camera look-controls mouse-cursor>
+          <a-cursor fuse="true" color="#F0F0F0" scale="0.6 0.6 0.6">
+          </a-cursor>
+        </a-entity>
+      </a-entity>
+
+      <!-- Defining video as a media source -->
+      <video id="theatre-video" autoplay crossorigin="anonymous" style="display:none">
+        <source src="videos/dolby.mp4" type="video/mp4" />
+        <!-- Fallback if the browser doesn't support the video -->
+        Your browser does not support the video tag.
+      </video>
+
+    </a-scene>
+
+    <script>
+        const videoElement = document.querySelector('#theatre-video');
+        const controlButton = document.querySelector('#video-control');
+        const ambientLight = document.getElementById('ambient-light');
+        const directionalLight = document.getElementById('directional-light');
+        const seatingArea = document.getElementById('seating-area');
+        const seating = document.getElementById('seats');
+        const floor = document.getElementById('floor');
+        const ceiling = document.getElementById('ceiling');
+        const videoImage = document.querySelector('#video-image');
+      // Initially, video is paused
+      
+      // Add seats (same as your logic)
+      const rows = 5;
+      const seatsPerRow = 6;
+      const seatSpacing = 2;
+      const rowSpacing = 2;
+      const seatColors = '#1f0202'; 
+
+      for (let row = 0; row < rows; row++) {
+        for (let seat = 0; seat < seatsPerRow; seat++) {
+          const xPos = (seat - (seatsPerRow - 1) / 2) * seatSpacing;
+          const zPos = -8 + row * rowSpacing;
+
+          const seatElement = document.createElement('a-box');
+          seatElement.setAttribute('position', `${xPos} 1 ${zPos}`);
+          seatElement.setAttribute('width', '1.5');
+          seatElement.setAttribute('height', '1');
+          seatElement.setAttribute('depth', '1.5');
+          seatElement.setAttribute('color', seatColors); // Assign color per row
+
+          seatingArea.appendChild(seatElement);
+        }
+      }
+      videoElement.pause();
+        controlButton.addEventListener('click', () => {
+            if (videoElement.paused) {
+                videoElement.play();
+                controlButton.setAttribute('src', '#pause'); // Change to pause image
+                videoImage.setAttribute('visible', 'false'); // Hide image when playing
+                // Change colors when the video is playing
+                seatingArea.setAttribute('color', '#1f0202'); // Change seat color
+                floor.setAttribute('color', '#080808'); // Change floor color
+                ceiling.setAttribute('color', '#141414'); // Change ceiling color
+            } else {
+                videoElement.pause();
+                controlButton.setAttribute('src', '#play'); // Change to play image
+            }
+        });
+
+        // Show the image when the video ends
+        videoElement.addEventListener('ended', () => {
+            videoImage.setAttribute('visible', 'true'); // Show image when video ends
+            controlButton.setAttribute('src', '#play'); // Reset to play button
+            seatingArea.setAttribute('color', seatColors); // Restore seat color
+            floor.setAttribute('color', '#361600'); // Restore floor color
+            ceiling.setAttribute('color', '#444444'); // Restore ceiling color
+        });
+      scene.addEventListener('exit-vr', () => {
+        ambientLight.setAttribute('visible', 'true');
+        directionalLight.setAttribute('visible', 'true');
+      });
+    </script>
+  </body>
+</html>

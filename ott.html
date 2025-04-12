@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - OTT Streaming Platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="ott.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to CineFlix</h1>
+        <p>Stream the latest movies and shows anytime, anywhere.</p>
+    </div>
+    
+    <!-- Movie Listings -->
+    <div class="container my-4">
+        <h2 class="text-center">Genre of Movies</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://www.tallengestore.com/cdn/shop/products/JohnWick-KeanuReeves-HollywoodEnglishActionMoviePoster-2_d2e65a82-e8e1-46f9-b5f0-7cbd47c1747c.jpg?v=1649071605" alt="John Wick">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNjZhNmYyMWYtNmRlNS00NzVkLTg0ZTEtODEzZjQxNTJkY2M4XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/24623b111384271.6000a082a190a.png" alt="Movie 3">
+                            <img src="https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNzM3OTcyNDQtNjAwNi00YTg4LWIyNTEtNjMzY2E2MWY2MGU1XkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://www.tallengestore.com/cdn/shop/products/JohnWick-KeanuReeves-HollywoodEnglishActionMoviePoster-2_d2e65a82-e8e1-46f9-b5f0-7cbd47c1747c.jpg?v=1649071605" alt="John Wick">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNjZhNmYyMWYtNmRlNS00NzVkLTg0ZTEtODEzZjQxNTJkY2M4XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/24623b111384271.6000a082a190a.png" alt="Movie 3">
+                            <img src="https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNzM3OTcyNDQtNjAwNi00YTg4LWIyNTEtNjMzY2E2MWY2MGU1XkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Action Movies</h5>
+                        <p class="card-text">Exciting action-packed thriller.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection1()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFOM0CN2H8X7_gawENHjKELpA5fRyvrKwK_Q&s" alt="Movie 1">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuQmSW17wrGcXbADd0fd4IB_2ja-RxYelcmQ&s" alt="Movie 2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVMVRYnwMzJ-4Ty55ExTLDDMwKWhyBcRE4lQ&s" alt="Movie 3">
+                            <img src="https://i.pinimg.com/736x/f3/f0/4a/f3f04a485eaad60915d70bb3df8e6440.jpg" alt="Movie 4">
+                            <img src="https://i.pinimg.com/736x/de/ec/36/deec361dc1dbc93977113f7fa2373f60.jpg" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFOM0CN2H8X7_gawENHjKELpA5fRyvrKwK_Q&s" alt="Movie 1">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuQmSW17wrGcXbADd0fd4IB_2ja-RxYelcmQ&s" alt="Movie 2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVMVRYnwMzJ-4Ty55ExTLDDMwKWhyBcRE4lQ&s" alt="Movie 3">
+                            <img src="https://i.pinimg.com/736x/f3/f0/4a/f3f04a485eaad60915d70bb3df8e6440.jpg" alt="Movie 4">
+                            <img src="https://i.pinimg.com/736x/de/ec/36/deec361dc1dbc93977113f7fa2373f60.jpg" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Sci-Fi Movies</h5>
+                        <p class="card-text">Explore futuristic adventures.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection2()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://m.media-amazon.com/images/I/71pFk6piECL.jpg" alt="Movie 1">
+                            <img src="https://i.pinimg.com/564x/b4/f8/b9/b4f8b944fe244db204483fe150f99110.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/I/6118Kdbc0KS._AC_UF894,1000_QL80_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMDJhODQ3ZDEtN2JmMS00Yjk5LTk1ZTUtMzI3YTU0NTNjMjAyXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/I/91+GrGr5TWL._AC_UF894,1000_QL80_.jpg" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://m.media-amazon.com/images/I/71pFk6piECL.jpg" alt="Movie 1">
+                            <img src="https://i.pinimg.com/564x/b4/f8/b9/b4f8b944fe244db204483fe150f99110.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/I/6118Kdbc0KS._AC_UF894,1000_QL80_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMDJhODQ3ZDEtN2JmMS00Yjk5LTk1ZTUtMzI3YTU0NTNjMjAyXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/I/91+GrGr5TWL._AC_UF894,1000_QL80_.jpg" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Web Series</h5>
+                        <p class="card-text">Heartfelt drama and emotions.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection3()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmQwNzRiNmItODc4Ny00Mjk4LThmYWQtNjI5OGU4OGUxMmY0XkEyXkFqcGc@._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMWM5MWY2YjctNzQ2Yy00NGYzLThmNTUtOWM0ZTM4ODMxYjM2XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZmU4MzExZGQtYzUzZC00NGE2LTg5NTgtZWI3MWM4YzgyNWUxXkEyXkFqcGc@._V1_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNWJiMWMxYmMtNTQxMy00ZjE2LWEzYTAtNTdmODI4MGI4OTRlXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmAXZ5H2mGvALvNPYywGxOFTtyUqT0IlITz2NxhJ4M_OJ_V2avwrXmtJOGZ2eCYTNA1pk&usqp=CAU" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmQwNzRiNmItODc4Ny00Mjk4LThmYWQtNjI5OGU4OGUxMmY0XkEyXkFqcGc@._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMWM5MWY2YjctNzQ2Yy00NGYzLThmNTUtOWM0ZTM4ODMxYjM2XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZmU4MzExZGQtYzUzZC00NGE2LTg5NTgtZWI3MWM4YzgyNWUxXkEyXkFqcGc@._V1_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNWJiMWMxYmMtNTQxMy00ZjE2LWEzYTAtNTdmODI4MGI4OTRlXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmAXZ5H2mGvALvNPYywGxOFTtyUqT0IlITz2NxhJ4M_OJ_V2avwrXmtJOGZ2eCYTNA1pk&usqp=CAU" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Romantic Movies</h5>
+                        <p class="card-text">Love story between two characters.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection4()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTI0MjE2MzUwOV5BMl5BanBnXkFtZTYwMTk5NjU3._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTI2NTFhZjUtMjM1Mi00ZGU0LWI3MTQtNjU0MzYzNGFhODYwXkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://d2sal5lpzsf102.cloudfront.net/78575/public/public/system/posters/1521796/standard/Guruvayoor-Amabalanadayil-213x285_1723275169.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZDM4ZWNkMjAtMGJmMS00YTBlLThlM2UtMDg1NTFkMTk0ZDBhXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZTU4ZWRlYTUtNGY0Yy00NDNjLThlNzQtY2M1NDNiOWM5MWJkXkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTI0MjE2MzUwOV5BMl5BanBnXkFtZTYwMTk5NjU3._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTI2NTFhZjUtMjM1Mi00ZGU0LWI3MTQtNjU0MzYzNGFhODYwXkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://d2sal5lpzsf102.cloudfront.net/78575/public/public/system/posters/1521796/standard/Guruvayoor-Amabalanadayil-213x285_1723275169.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZDM4ZWNkMjAtMGJmMS00YTBlLThlM2UtMDg1NTFkMTk0ZDBhXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZTU4ZWRlYTUtNGY0Yy00NDNjLThlNzQtY2M1NDNiOWM5MWJkXkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Comedy Movies</h5>
+                        <p class="card-text">Film genre that emphasizes humor.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection5()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-dark text-white movie-card">
+                    <div class="animi">
+                        <div class="slide-container">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNjFhMzBlNzktMjE2Ni00YTMyLWI2YWUtYmM1N2QxMDQwZmZhXkEyXkFqcGc@._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmQ3ZGEwZjEtZDRjYS00YzJmLWFjMzUtMjNhMTliY2RiMTk3XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNmJiOTQ5YjUtMzY5Mi00YTlhLTkyMzMtZmRmYjQxNDcyN2IwXkEyXkFqcGc@._V1_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmFmNjgxYjgtODMyNC00NDhmLTk0MzAtNzRkN2QwZTk1YjBmXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZjNmZmZmYzAtMWI2Mi00ZTdmLWE4ZTUtMzNkYmFiMzhkYjVjXkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                            <!-- Duplicating images to make the scrolling seamless -->
+                            <img src="https://m.media-amazon.com/images/M/MV5BNjFhMzBlNzktMjE2Ni00YTMyLWI2YWUtYmM1N2QxMDQwZmZhXkEyXkFqcGc@._V1_.jpg" alt="Movie 1">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmQ3ZGEwZjEtZDRjYS00YzJmLWFjMzUtMjNhMTliY2RiMTk3XkEyXkFqcGc@._V1_.jpg" alt="Movie 2">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNmJiOTQ5YjUtMzY5Mi00YTlhLTkyMzMtZmRmYjQxNDcyN2IwXkEyXkFqcGc@._V1_.jpg" alt="Movie 3">
+                            <img src="https://m.media-amazon.com/images/M/MV5BYmFmNjgxYjgtODMyNC00NDhmLTk0MzAtNzRkN2QwZTk1YjBmXkEyXkFqcGc@._V1_.jpg" alt="Movie 4">
+                            <img src="https://m.media-amazon.com/images/M/MV5BZjNmZmZmYzAtMWI2Mi00ZTdmLWE4ZTUtMzNkYmFiMzhkYjVjXkEyXkFqcGc@._V1_.jpg" alt="Movie 5">
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Horror Movies</h5>
+                        <p class="card-text">Films that are intended to scare.</p>
+                        <button class="btn btn-warning" onclick="scrollToSection6()">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center mt-3">OTT Movie Streaming</h1>
+        <h5 class="card-title">Action Movies</h5>
+        <div class="video-section" id="act">
+            <div class="video-container" id="videoScroll">
+                
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://static.toiimg.com/thumb/msid-115749012,width-400,resizemode-4/115749012.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/831/158/498/action-car-crime-custom-wallpaper-preview.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://thepopcornuniverse.in/wp-content/uploads/2024/01/Salaar_Poster.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://upperstall.com/wp-content/uploads/2024/07/et00374797-kvhcnbusgs-landscape.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://static.toiimg.com/thumb/msid-101172246,width-1280,height-720,resizemode-4/101172246.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://andhrawatch.com/wp-content/uploads/2024/09/saripodha-sanivaram-nani-984-1725084027.jpg" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbbgdHAFZOydDi9N2UUq2HFOacAV4zyla8oQ&s" width="100%">
+                </div>
+                <div class="video-box" data-video="videos/redsea.mp4">
+                    <img src="https://i.pinimg.com/736x/c4/d9/cc/c4d9cc183a95adc597947342c2bc6b31.jpg" width="100%">
+                </div>
+                
+            </div>
+        </div>        
+        <h5 class="card-title">Sci-fi Movies</h5>
+        <div class="video-section" id="act1">
+            <div class="video-container" id="videoScroll">
+                <div class="video-box" onclick="navigateToPlayer('video1.mp4')">
+                    <img src="https://rukminim2.flixcart.com/image/850/1000/jcc9ci80/poster/h/8/2/medium-pl-avatar-update-wallp-wall-poster-19-13-inches-matte-original-imaetdv85bmpzvzh.jpeg?q=90&crop=false" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video2.mp4')">
+                    <img src="https://tracktollywood.com/wp-content/smush-webp/2024/06/HO00003244.jpeg.webp" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1EmQamu598zlct8y6UMbnh_rI2ASKdDxYUQj7wAwkIw2COJNM_cxXl9UBB5JEv4jKnKw&usqp=CAU" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video4.mp4')">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/577247cb47fc250a330fff4113472aeda46c613a6ad03b3d19320b21017a12aa.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video5.mp4')">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2024/07/20240702081931_kanguva.png" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video6.mp4')">
+                    <img src="https://tracktollywood.com/wp-content/smush-webp/2024/01/224921_thumb_665.jpg.webp" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="http://nettv4u.com/fileman/Uploads2/enthiran2.png" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSrx3scWCwENqt99Wo1OfFn9awZJ1wQxR0jg&s" width="100%">
+                </div>
+            </div>
+        </div>
+        
+        <h5 class="card-title">Web Series</h5>
+        <div class="video-section" id="act2">
+            <div class="video-container" id="videoScroll">
+                <div class="video-box" onclick="navigateToPlayer('video1.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyfePv2mwh2AuxK2RO0DmQSR6KOVbraaY1Xg&s" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video2.mp4')">
+                    <img src="https://m.media-amazon.com/images/I/91txlu5NEfL.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video3.mp4')">
+                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202301/shahid_1-sixteen_nine.jpg?VersionId=Xhw63UO4W4.MwjmcGQsuMeX48VHhga1w" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video4.mp4')">
+                    <img src="https://wallpapercave.com/wp/wp2274476.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video5.mp4')">
+                    <img src="https://media.graphassets.com/q52bvxzT7SNtSuuJTicz" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video6.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ0rUlo0kFgaFQEA1wtkYn7I8NOgnjQ8XC7A&s" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2FPfizY69ZWVmzeXE1kMMLfTY-u724tIH1OQjh5rcUW-tnPtV6plOZ4tVzANT7GTXBTY&usqp=CAU" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video8.mp4')">
+                    <img src="https://4kwallpapers.com/images/walls/thumbs_3t/17287.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+        
+        <h5 class="card-title"> Romantic Movies</h5>
+        <div class="video-section" id="act3">
+            <div class="video-container" id="videoScroll">
+                <div class="video-box" onclick="navigateToPlayer('video1.mp4')">
+                    <img src="https://image.tmdb.org/t/p/w1280/2wN6xbmMPFVqnhQkoxNBTB5djFR.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video2.mp4')">
+                    <img src="https://i.pinimg.com/736x/a1/ee/f1/a1eef120bce02d2eb2c1d357d04a1869.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video3.mp4')">
+                    <img src="https://rnn.ng/wp-content/uploads/2023/02/Top-10-Highest-Grossing-Movies-Of-All-Time-titanic-1997.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video4.mp4')">
+                    <img src="https://popcornreviewss.com/wp-content/uploads/2024/01/Hi-Nanna-2023-Romance-Telugu-Review.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video5.mp4')">
+                    <img src="https://s29288.pcdn.co/wp-content/uploads/2020/07/la-la-land-poster-750x422-1.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video6.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAaQ1YuqhEm2QmMKS3RP1CodO0v9conbN8Mg&s" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video8.mp4')">
+                    <img src="https://wirally.com/wp-content/uploads/2023/05/6-8.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video8.mp4')">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/bda093b1cf7d51a2cfc0bc0b9ce17c0bf5570645f23ec4833f339231e2052ea9.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+        
+        <h5 class="card-title">Horror Movies</h5>
+        <div class="video-section" id="act4">
+            <div class="video-container" id="videoScroll">
+                <div class="video-box" onclick="navigateToPlayer('video1.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Yxfl70xUmc3n5wdJcjJDvOgO4On1b0i-uw&s" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video3.mp4')">
+                    <img src="https://wallpaperaccess.com/full/1542592.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video3.mp4')">
+                    <img src="https://pbs.twimg.com/media/EQfx52OWsAAi-hA.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video4.mp4')">
+                    <img src="https://talithasolomonharrison.weebly.com/uploads/2/3/7/5/23758705/568187.jpg?726" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video5.mp4')">
+                    <img src="https://static.toiimg.com/thumb/msid-112464717,width-400,resizemode-4/112464717.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video6.mp4')">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/339e8f1329072319b23d32f8932cda7c93b5a8cc75ca19375107c19a2a1386b4.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://origin-staticv2.sonyliv.com/videoasset_images/bramayayugam_tamil_landscape_thumb.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://images.filmibeat.com/img/2023/07/pizza32-1690514614.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+        
+        <h5 class="card-title">Comedy Movies</h5>
+        <div class="video-section" id="act5">
+            <div class="video-container" id="videoScroll">
+                <div class="video-box" onclick="navigateToPlayer('video1.mp4')">
+                    <img src="https://static.toiimg.com/thumb/msid-113610160,width-1280,height-720,resizemode-4/113610160.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video2.mp4')">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/434/509/141/central-intelligence-dwayne-johnson-kevin-hart-action-wallpaper-preview.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video3.mp4')">
+                    <img src="https://c.ndtvimg.com/2021-12/7187kq7_car_625x300_20_December_21.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video4.mp4')">
+                    <img src="https://images.cdn.prd.api.discomax.com/2025/01/03/fb64a4be-85f7-3fe0-9550-1b80323c3a79.jpeg?f=jpg&q=75&w=1280&w=160" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video5.mp4')">
+                    <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/old_images/MOVIE/6211/1000036211/1000036211-h" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video6.mp4')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3MkOTR3WKxqGpoY-L8veW1xjNKaKoKjEMPg&s" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video7.mp4')">
+                    <img src="https://m.media-amazon.com/images/S/pv-target-images/764484dbfbb3aeb959ad2b8b3a6c628b38a69fa33095ff4f325b7e2f1ff378eb.jpg" width="100%">
+                </div>
+                <div class="video-box" onclick="navigateToPlayer('video8.mp4')">
+                    <img src="https://browngirlmagazine.com/wp-content/uploads/2018/08/Chennai-Express-New-Poster.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 CineFlix. All rights reserved.</p>
+    </div>
+    <script>
+
+        const videoScroll = document.getElementById("videoScroll");
+
+        function scrollLeft() {
+            videoScroll.scrollBy({ left: -300, behavior: "smooth" });
+        }
+
+        function scrollRight() {
+            videoScroll.scrollBy({ left: 300, behavior: "smooth" });
+        }
+        function navigateToPlayer(videoSrc) {
+            window.location.href = `video.html?video=${encodeURIComponent(videoSrc)}`;
+        }
+        function scrollToSection1() {
+        document.getElementById("act").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToSection2() {
+        document.getElementById("act1").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToSection3() {
+        document.getElementById("act2").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToSection4() {
+        document.getElementById("act3").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToSection5() {
+        document.getElementById("act4").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToSection6() {
+        document.getElementById("act5").scrollIntoView({ behavior: "smooth" });
+        }
+        
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all video boxes
+        const videoBoxes = document.querySelectorAll(".video-box");
+
+        // Loop through each video box and add click event
+        videoBoxes.forEach(box => {
+            box.addEventListener("click", function () {
+                const videoSrc = this.getAttribute("data-video"); // Get the video source
+                if (videoSrc) {
+                    window.location.href = `video.html?video=${encodeURIComponent(videoSrc)}`;
+                }
+            });
+        });
+    });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+.bg {
+    background-image: url("https://res.cloudinary.com/dqclwnqel/image/upload/v1730956827/log1_cudrcv.jpg");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+  }
+
+  .con {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    border: solid 1px white;
+  }
+  
+  .ash1{
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 500;
+    
+    font-size: 20px;
+    letter-spacing: 2px;
+    }
+  .hea {
+    text-align: center;
+    color: rgb(243, 200, 9);
+    font-weight: bold;
+    font-size: 40px;
+  }
+  
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus ,input[type="email"]:focus, input[type="password"]:focus{
+    border: 1px solid #ff5e62;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 94, 98, 0.6);
+    outline: none;
+  }
+  
+  

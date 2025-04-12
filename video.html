@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTT Movie Player</title>
+    
+    <!-- Bootstrap Icons (Optional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <style>
+        /* Background Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to right,black,rgb(126, 2, 2));
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            text-align: center;
+            
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            
+        }
+
+        /* Video Styling */
+        .video-wrapper video {
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        /* Controls */
+        .controls {
+            margin-top: 15px;
+        }
+
+        .play-btn {
+            background: #000000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .play-btn:hover {
+            background: #0085f1;
+        }
+
+        /* Movie Description */
+        .description {
+            margin-top: 15px;
+            font-size: 16px;
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        
+        <h2>🎬 Red Sea: The Ultimate Adventure</h2>
+
+        <div class="video-wrapper">
+            <video id="video-player" controls>
+                <source src="./videos/redsea.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="controls">
+            <button class="play-btn" onclick="togglePlayPause()">
+                <i id="play-icon" class="bi bi-play-fill"></i> Play
+            </button>
+        </div>
+
+        <div class="description">
+            <p><strong>Movie Description:</strong>  
+                A high-intensity action thriller set in the heart of the ocean.  
+                Follow the journey of brave heroes battling against all odds!
+            </p>
+        </div>
+    
+    </div>
+
+    <script>
+        const videoElement = document.getElementById("video-player");
+        const playButton = document.querySelector(".play-btn");
+        const playIcon = document.getElementById("play-icon");
+
+        function togglePlayPause() {
+            if (videoElement.paused) {
+                videoElement.play();
+                playIcon.classList.replace("bi-play-fill", "bi-pause-fill");
+                playButton.innerHTML = '<i id="play-icon" class="bi bi-pause-fill"></i> Pause';
+            } else {
+                videoElement.pause();
+                playIcon.classList.replace("bi-pause-fill", "bi-play-fill");
+                playButton.innerHTML = '<i id="play-icon" class="bi bi-play-fill"></i> Play';
+            }
+        }
+    </script>
+
+</body>
+</html>

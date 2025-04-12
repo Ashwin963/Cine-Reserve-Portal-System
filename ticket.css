@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    background: url("images/off.jpg");
+     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+.ash1{
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  }
+  /* Ticket Container */
+  .ticket-container {
+    background-color: rgb(184, 8, 38);
+    background-size: cover;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Ticket */
+  .ticket {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+  }
+  
+  /* Ticket Content */
+  .ticket-content {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    justify-content: space-between;
+  }
+  
+  /* Ticket Info Section */
+  .ticket-info {
+    padding: 20px;
+    color: white;
+    flex: 1;
+  }
+  
+  /* Ticket Header */
+  .ticket-header {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px dashed #444;
+  }
+  
+  .ticket-header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .ticket-header p {
+    margin: 0;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  /* Ticket Details */
+  .ticket-details {
+    margin-top: 0px;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .ticket-details p {
+    margin: 8px 0;
+  }
+  
+  .ticket-details span {
+    
+    color: white;
+  }
+  
+  /* Ticket Footer */
+  .ticket-footer {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px dashed #444;
+  }
+  
+  .ticket-footer p {
+    margin: 0;
+    font-size: 18px;
+    color: #ffcc00;
+    font-weight: bolder;
+  }
+  
+  /* Movie Poster Section */
+  .ticket-image {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .ticket-image img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

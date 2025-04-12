@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Home Page</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      .back-ima {
+  position: relative; /* Ensure this is the relative parent */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('./images/str.png');
+  display: flex;
+  align-items: center; /* Align content to bottom */
+  justify-content: flex-end; /* Align content to right */
+  padding: 20px; /* Adjust padding for spacing */
+}
+
+.str-con {
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 100px;
+  padding: 14px;
+  font-size: 14px;
+  max-width: 60%;
+  color: aliceblue;
+  position: relative; /* Keeps it inside .back-ima */
+  text-align: center; /* Align text to the right */
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(to right,black,rgb(126, 2, 2));">
+      <a class="navbar-brand" href="#">
+        <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953935/logo1_k3duut.png" alt="logo" width="34%"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ash" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link active" href="#sec1" style="color:white;">
+            Recommended Movies
+            <span class="sr-only">(current)</span>
+          </a>
+          <a class="nav-link" href="#sec2" style="color:white;">Upcoming Movies</a>
+          <a class="nav-link" href="#sec3" style="color:white;">OTT Series</a>
+          <a class="nav-link" href="#sec4" style="color:white;">Gift Vouchers</a>
+          <a class="nav-link" href="#sec5" style="color:white;">Follow Us</a>
+          <a class="nav-link" href="log.html" style="color:white;">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <div class="bk1" style="background-image:url('https://res.cloudinary.com/dqclwnqel/image/upload/v1730954007/header3_lq6nur.jpg');background-size: cover;">
+        <div class="search-container ash1 pt-5">
+            <input type="text" id="searchBox" placeholder="Enter city name" onkeyup="searchLocation()">
+            <a class="btn btn-outline-warning mt-1" href="#sec1" id="searchButton" onclick="navigateOtherCity()">Navigate</a>
+        </div>
+        <div id="locations" class="pb-4 ash1">
+            <div class="" data-city="Delhi">
+            <a class="btn btn-outline-light" href="#sec1"  onclick="navigate('Delhi')">Delhi</a>
+            </div>
+            <div class="" data-city="Hyderabad">
+            <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Hyderabad')">Hyderabad</a>
+            </div>
+            <div class="" data-city="Bangalore">
+            <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Bangalore')">Bangalore</a>
+            </div>
+            <div class="" data-city="Mumbai">
+                <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Mumbai')">Mumbai</a>
+            </div>
+            <div class="" data-city="Pune">
+                <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Pune')">Pune</a>
+            </div>
+            <div class="" data-city="Kolkota">
+                <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Kolkota')">Kolkota</a>
+            </div>
+            <div class="" data-city="Chennai">
+                <a class="btn btn-outline-light" href="#sec1" onclick="navigate('Chennai')">Chennai</a>
+            </div>
+            <p class="ash1 text-center" style="color: wheat;">Instead, you may type your city's name into the input box if it isn't listed above.</p>
+        </div>
+    </div>
+    <div style="background-image: linear-gradient(to right,black,rgb(126, 2, 2));">
+          <div class="col-12 d-flex flex-row bg pt-2" style="color: whitesmoke;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%"  fill="currentColor" class="bi bi-camera-reels m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0M1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0"/>
+            <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm6 8.73V7.27l-3.5 1.555v4.35zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1"/>
+            <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6M7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%"  fill="currentColor" class="bi bi-music-note-beamed m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
+            <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
+            <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-cast m-3 pr-3" viewBox="0 0 16 16">
+            <path d="m7.646 9.354-3.792 3.792a.5.5 0 0 0 .353.854h7.586a.5.5 0 0 0 .354-.854L8.354 9.354a.5.5 0 0 0-.708 0"/>
+            <path d="M11.414 11H14.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h3.086l-1 1H1.5A1.5 1.5 0 0 1 0 10.5v-7A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v7a1.5 1.5 0 0 1-1.5 1.5h-2.086z"/>
+            </svg>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-play-circle-fill m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%"  fill="currentColor" class="bi bi-badge-3d m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M4.52 8.368h.664c.646 0 1.055.378 1.06.9.008.537-.427.919-1.086.919-.598-.004-1.037-.325-1.068-.756H3c.03.914.791 1.688 2.153 1.688 1.24 0 2.285-.66 2.272-1.798-.013-.953-.747-1.38-1.292-1.432v-.062c.44-.07 1.125-.527 1.108-1.375-.013-.906-.8-1.57-2.053-1.565-1.31.005-2.043.734-2.074 1.67h1.103c.022-.391.383-.751.936-.751.532 0 .928.33.928.813.004.479-.383.835-.928.835h-.632v.914zm3.606-3.367V11h2.189C12.125 11 13 9.893 13 7.985c0-1.894-.861-2.984-2.685-2.984zm1.187.967h.844c1.112 0 1.621.686 1.621 2.04 0 1.353-.505 2.02-1.621 2.02h-.844z"/>
+            <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-p-square m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M5.5 4.002h2.962C10.045 4.002 11 5.104 11 6.586c0 1.494-.967 2.578-2.55 2.578H6.784V12H5.5zm2.77 4.072c.893 0 1.419-.545 1.419-1.488s-.526-1.482-1.42-1.482H6.778v2.97z"/>
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-mic-fill m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0z"/>
+            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-headset m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-cup-straw m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82q0 .069-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87s-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A1 1 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278M9.768 4.607A14 14 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.3 3.3 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a6 6 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69s2.081-.441 2.438-.69c.042-.029.09-.094.102-.215l.852-8.03a6 6 0 0 1-.435.127 9 9 0 0 1-.89.17zM4.467 4.884s.003.002.005.006zm7.066 0-.005.006zM11.354 5a3 3 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-emoji-sunglasses-fill m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v.116A4.2 4.2 0 0 1 8 5c.35 0 .69.04 1 .116V5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-1.994-1.839A3 3 0 0 0 8 6c-.393 0-.74.064-1.006.161A2 2 0 0 1 5 8h-.438a2 2 0 0 1-1.94-1.515zM4.969 9.75A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .866-.5z"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-sunglasses m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M3 5a2 2 0 0 0-2 2v.5H.5a.5.5 0 0 0 0 1H1V9a2 2 0 0 0 2 2h1a3 3 0 0 0 3-3 1 1 0 1 1 2 0 3 3 0 0 0 3 3h1a2 2 0 0 0 2-2v-.5h.5a.5.5 0 0 0 0-1H15V7a2 2 0 0 0-2-2h-2a2 2 0 0 0-1.888 1.338A2 2 0 0 0 8 6a2 2 0 0 0-1.112.338A2 2 0 0 0 5 5zm0 1h.941c.264 0 .348.356.112.474l-.457.228a2 2 0 0 0-.894.894l-.228.457C2.356 8.289 2 8.205 2 7.94V7a1 1 0 0 1 1-1"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-search m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-hourglass-top m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M2 14.5a.5.5 0 0 0 .5.5h11a.5.5 0 1 0 0-1h-1v-1a4.5 4.5 0 0 0-2.557-4.06c-.29-.139-.443-.377-.443-.59v-.7c0-.213.154-.451.443-.59A4.5 4.5 0 0 0 12.5 3V2h1a.5.5 0 0 0 0-1h-11a.5.5 0 0 0 0 1h1v1a4.5 4.5 0 0 0 2.557 4.06c.29.139.443.377.443.59v.7c0 .213-.154.451-.443.59A4.5 4.5 0 0 0 3.5 13v1h-1a.5.5 0 0 0-.5.5m2.5-.5v-1a3.5 3.5 0 0 1 1.989-3.158c.533-.256 1.011-.79 1.011-1.491v-.702s.18.101.5.101.5-.1.5-.1v.7c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13v1z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-tv m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5M13.991 3l.024.001a1.5 1.5 0 0 1 .538.143.76.76 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.5 1.5 0 0 1-.143.538.76.76 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.5 1.5 0 0 1-.538-.143.76.76 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.5 1.5 0 0 1 .143-.538.76.76 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-earbuds m-3 pr-3" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6.825 4.138c.596 2.141-.36 3.593-2.389 4.117a4.4 4.4 0 0 1-2.018.054c-.048-.01.9 2.778 1.522 4.61l.41 1.205a.52.52 0 0 1-.346.659l-.593.19a.55.55 0 0 1-.69-.34L.184 6.99c-.696-2.137.662-4.309 2.564-4.8 2.029-.523 3.402 0 4.076 1.948zm-.868 2.221c.43-.112.561-.993.292-1.969-.269-.975-.836-1.675-1.266-1.563s-.561.994-.292 1.969.836 1.675 1.266 1.563m3.218-2.221c-.596 2.141.36 3.593 2.389 4.117a4.4 4.4 0 0 0 2.018.054c.048-.01-.9 2.778-1.522 4.61l-.41 1.205a.52.52 0 0 0 .346.659l.593.19c.289.092.6-.06.69-.34l2.536-7.643c.696-2.137-.662-4.309-2.564-4.8-2.029-.523-3.402 0-4.076 1.948m.868 2.221c-.43-.112-.561-.993-.292-1.969.269-.975.836-1.675 1.266-1.563s.561.994.292 1.969-.836 1.675-1.266 1.563"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%" fill="currentColor" class="bi bi-camera-fill m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+            <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20%"  fill="currentColor" class="bi bi-mic-fill m-3 pr-3" viewBox="0 0 16 16">
+            <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0z"/>
+            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+            </svg>
+        </div>
+        <div class="d-flex flex-row head-bg" style="color: white;">
+          <div class="text-center" style="display: flex;flex-wrap: wrap;"><img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730954007/hin_mod_mf1k1g.jpg" width="100%"><h4 class="ash pl-5 pt-1">BOLLYWOOD</h4></div>
+          <div class="text-center" style="display: flex;flex-wrap: wrap;"><img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953943/tam_mod_ckbgtr.jpg" width="100%"><h4 class="ash pl-5 pt-1">KOLLYWOOD</h4></div>
+          <div class="text-center" style="display: flex;flex-wrap: wrap;"><img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953973/eng_mod_brk0cm.jpg" width="100%"><h4 class="ash pl-5 pt-1">HOLLYWOOD</h4></div>
+          <div class="text-center" style="display: flex;flex-wrap: wrap;"><img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953948/tel_x9a7zz.jpg" width="100%"><h4 class="ash pl-5 pt-1">TOLLYWOOD</h4></div>
+          <div class="text-center" style="display: flex;flex-wrap: wrap;"><img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953935/mal_mod_edctns.jpg" width="100%"><h4 class="ash pl-5 pt-1">MOLLYWOOD</h4></div>
+        </div> 
+    </div>
+    <div class="bk p-3" id="sec1">
+        <div class="container-fluid">
+            <div class="row ash1 text-center">
+                <div class="col-12"><h1 class="title-card pt-3 m-2 ash1 text-center" id="mainTitle">MOVIES </h1><h1 class="ash2 text-center m-3" style="color: white;">Recommended Movies</h1></div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730954005/goat_ejla1k.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">The GOAT</h5>
+                    <a href="movie1.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953933/kalki_liaoxt.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Kalki 2898 AD</h5>
+                    <a href="movie2.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953962/dead_cqrzri.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Deadpool And Wolverine</h5>
+                    <a href="movie3.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953967/demon_qz6p1t.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Demonty Colony 2</h5>
+                    <a href="movie4.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953948/val_qunsel.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Vaazhai</h5>
+                    <a href="movie5.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953944/speak_uyacyy.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Speak No Evil</h5>
+                    <a href="movie6.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953940/Raaya_asy9ws.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Raayan</h5>
+                    <a href="movie7.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953942/ss_j4dq1o.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Saripodhaa Sanivaaram</h5>
+                    <a href="movie8.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953946/thang_gntu3x.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Thangalaan</h5>
+                    <a href="movie9.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953934/ind_l45sat.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Indian 2</h5>
+                    <a href="movie10.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953936/leo_fdvykl.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Leo</h5>
+                    <a href="movie11.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                    <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953934/jail_kokk4u.jpg" class="wcu-card-image m-3"/>
+                    <h5 class="card-title">Jailer</h5>
+                    <a href="movie12.html" class="btn btn-warning">Reserve Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-3" style="background-image: url('https://res.cloudinary.com/dqclwnqel/image/upload/v1730956833/loc_kjysx0.jpg'); background-size: cover;" id="sec2">
+        <div class="container-fluid">
+            <div class="row ash1 text-center">
+                <div class="col-12"><h1 class="ash2 text-center m-3" style="color: white;">Upcoming Movies</h1></div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                      <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953954/vetta_vukhk7.jpg" class="wcu-card-image m-2"/>
+                      <h5 class="card-title">Vettaiyan</h5>
+                      <p class="card-text"><a href="https://youtu.be/pE1qTi_Lt8E?feature=shared">Trailer</a></p>
+                      <div class="d-flex flex-row justify-content-center m-2" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                          <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/>
+                        </svg>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                      <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953939/kang_gayxsq.jpg" class="wcu-card-image m-2"/>
+                      <h5 class="card-title">Kanguva</h5>
+                      <p class="card-text"><a href="https://youtu.be/ajnCMSC4VPo?feature=shared">Trailer</a></p>
+                      <div class="d-flex flex-row justify-content-center m-2" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                          <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/>
+                        </svg>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                      <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953967/amaran_pe6rbz.jpg" class="wcu-card-image m-2"/>
+                      <h5 class="card-title">Amaran</h5>
+                      <p class="card-text"><a href="https://youtu.be/UPKLS4pRnSo?feature=shared">Trailer</a></p>
+                      <div class="d-flex flex-row justify-content-center m-2" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="wcu-card p-3 mb-3">
+                      <img src="https://res.cloudinary.com/dqclwnqel/image/upload/v1730953949/venom_mr2igv.jpg" class="wcu-card-image m-2"/>
+                      <h5 class="card-title">Venom-The Last Dance</h5>
+                      <p class="card-text"><a href="https://youtu.be/xCgggTSN1rU?feature=shared">Trailer</a></p>
+                      <div class="d-flex flex-row justify-content-center m-2" style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                          <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/>
+                        </svg>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="sec3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="back-ima col-12">
+            <div class="str-con d-flex flex-column justify-content-end">
+                <h1>CineFlix – Your cinema, your way.</h1>
+                <p>"Welcome to CineFlix – Your Ultimate Entertainment Destination!
+                Stream the latest movies, binge-watch your favorite shows, and explore exclusive content anytime, anywhere. Enjoy high-quality streaming, personalized recommendations, and a seamless viewing experience across all your devices. Sign up now and start watching!"</p>
+                <div>
+                  <button class="btn btn-outline-warning" onclick="window.location.href='ottp.html'">Watch Now</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="thanking-customers-section pt-5 pb-5" id="sec4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-7 d-flex flex-column">
+              <h1 class="thanking-customers-section-heading">
+                Thank you for being a valuable customer to us.
+              </h1>
+              <p class="thanking-customers-section-description">
+                We have a surprise gift for you
+              </p>
+              <div>
+                <button type="button" class="custom-button btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                  Redeem Gift
+                </button>
+              </div>
+              <div class="col-12 col-md-5 m-5">
+                <img
+                  src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png"
+                  class="thanking-customers-section-img "
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="follow-us-section pt-5 pb-5" id="sec5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div id="box">
+              <div class="p-4">
+                <h1 class="follow-us-section-heading ash2 ">Follow Us</h1>
+                <div class="d-flex flex-row">
+                  <div class="follow-us-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-facebook icon" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                  </div>
+                  <div class="follow-us-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-instagram icon" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                  </div>
+                  <div class="follow-us-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" fill="currentColor" class="bi bi-whatsapp icon" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; 2025 CineApp. All rights reserved.</p>
+    </div>
+    <script src="home.js"></script>
+
+  </body>
+</html>

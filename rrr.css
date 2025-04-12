@@ -1,0 +1,185 @@
+html{
+    scroll-behavior: smooth;
+  }
+.bk{
+    background: url('images/card1.jpeg');
+    background-size: cover;
+    width: 100%;
+}
+
+ .ash{
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: white;
+    opacity: .9;
+}
+  .moviebox{
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 62px 150px 20px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000069;
+    backdrop-filter: blur(4px);
+    color: white;
+  }
+  
+  .imagebox img{
+    height:260px;
+    width:200px;
+    border-style:solid;
+    border-width: 4px;
+    border-color: white;
+  }
+  .moviedetails{
+    display: grid;
+    align-items: start;
+    padding-left: 24px;
+  }
+  .selecttext{
+    font-size:18px;
+    padding: 12px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    }
+  
+.con {
+    background-color: black;
+    border: solid 0px white;
+    border-radius: 10px;
+    padding: 40px;
+    min-width: auto;
+  }
+  
+ #movieDate{
+    width: 25%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  #movieTime{
+    width: 30%;
+    padding: 9px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  #movieTheatre{
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  #quantity{
+    width: 25%;
+    padding: 7px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+#seatMap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 40px; /* Adjust seat size */
+    height: 40px; /* Adjust seat size */
+    margin: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.row .seat:nth-child(5) {
+    margin-left: 20px; /* Adjust this value for the gap between the 4th and 5th */
+}
+.row .seat:nth-child(13) {
+    margin-left: 20px; /* Adjust this value for the gap between the 12th and 13th */
+}
+.seat.silver {
+    background-color: #c0c0c0;
+}
+.seat.gold {
+    background-color: #ffd700;
+}
+.seat.platinum {
+    background-color: #e5e4e2;
+}
+.seat.selected {
+    background-color: #4caf50;
+    color: #fff;
+}
+.category-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Optional: To space out each category section */
+.category-container {
+    margin-bottom: 20px;
+}
+.screen {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.bttn{
+    padding: 4px;
+    border-radius: 6px;
+    border-width: 0px;
+    width: 14%;
+    color: white;
+}
+
+button:hover{
+    color: #ffd700;
+}
+#seatMap .row.middle-row {
+    justify-content: space-evenly;
+}
+
